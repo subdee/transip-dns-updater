@@ -1,0 +1,1 @@
+0 */12 * * * php /app/index.php >> /var/log/script.log
