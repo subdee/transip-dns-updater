@@ -2,6 +2,10 @@
 
 Easily update a domain with your current IP in your TransIP DNS settings.
 
+[![Build Status](https://travis-ci.org/subdee/transip-dns-updater.svg?branch=master)](https://travis-ci.org/subdee/transip-dns-updater)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/subdee/transip-dns-updater/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/subdee/transip-dns-updater/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/subdee/transip-dns-updater/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/subdee/transip-dns-updater/?branch=master)
+
 ## Getting Started
 
 You can choose whether you want to run the project natively or inside a small docker container (useful for NAS systems such as Synology)
