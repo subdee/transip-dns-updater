@@ -8,11 +8,11 @@ class Config
     public $domain;
     public $subdomain;
 
-    public function __construct()
+    public function __construct(Environment $environment)
     {
-        $this->user = getenv('TRANSIP_USER');
-        $this->domain = getenv('TRANSIP_DOMAIN');
-        $this->subdomain = getenv('TRANSIP_SUBDOMAIN');
+        $this->user = $environment->getValue('TRANSIP_USER');
+        $this->domain = $environment->getValue('TRANSIP_DOMAIN');
+        $this->subdomain = $environment->getValue('TRANSIP_SUBDOMAIN');
 
         return $this;
     }

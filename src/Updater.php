@@ -9,18 +9,20 @@ class Updater
 {
     private $config;
     private $client;
+    private $ipGrabber;
 
-    public function __construct(Config $config, string $keypair)
+    public function __construct(Client $client, Config $config, IpGrabber $ipGrabber)
     {
         $this->config = $config;
-        $this->client = new Client($config->user, $keypair);
+        $this->client = $client;
+        $this->ipGrabber = $ipGrabber;
     }
 
     public function update()
     {
         try {
             $domainApi = $this->client->api('domain');
-            $currentIp = trim(file_get_contents('http://ipv4.icanhazip.com'));
+            $currentIp = $this->ipGrabber->getCurrentIp();
 
             /** @var DnsEntry[] $dnsEntries */
             $dnsEntries = $domainApi->getInfo($this->config->domain)->dnsEntries;
@@ -42,6 +44,5 @@ class Updater
         } catch (\Exception $e) {
             return $e->getMessage();
         }
-
     }
 }
