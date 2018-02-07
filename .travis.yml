@@ -2,8 +2,6 @@ language: php
 php:
   - '7.1'
 
-install:
-  - composer install
+install: composer install --no-interaction
 
-build:
-  - phpunit --configuration test/phpunit.xml test/
+script: phpunit --configuration test/phpunit.xml test/
